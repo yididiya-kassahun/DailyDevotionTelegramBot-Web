@@ -1,0 +1,42 @@
+mat-card {
+  max-width: 500px;
+  // height: 200px;
+  margin: 2em auto;
+  text-align: center;
+}
+
+.signin-content {
+  padding: 60px 1rem;
+  margin-top: 40px;
+  left: 50%;
+}
+
+.full-width-input {
+  width: 100%;
+}
+
+.background {
+
+  width: 100%;
+  margin-left: 600px;
+  margin-top: 150px;
+  // background-color: #0b75c9;
+}
+
+.card-body {
+  height: 400px;
+}
+
+.imgs {
+  //background-image: url("/assets/img/bg-image.jpg");
+  //background-position: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  margin: 0px;
+  padding: 0px;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  height: 100%;
+}

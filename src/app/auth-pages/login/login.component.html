@@ -1,0 +1,39 @@
+
+<div class="imgs">
+    <div class="background">
+        <div class="col-md-3">
+            <div class="card card-profile">
+                <div class="card-avatar">
+                    <img class="img" src="../assets/img/angular2-logo-red.png"/>
+                </div>
+                <div class="card-body">
+                    <h6 class="card-category text-gray"><b>Daily Devotion (4Telegram Bot)</b></h6>
+                    <h4 class="card-title">Log In</h4>
+
+                    <form>
+                        <mat-form-field>
+                            <input matInput placeholder="Email" type="email" formControlName="email" required>
+                            <!-- <mat-error style="color: red" >
+                                Please insert email!
+                            </mat-error> -->
+                        </mat-form-field>
+                        <mat-form-field class="full-width-input">
+                            <input matInput type="password" placeholder="Password" formControlName="password" required>
+                            <!-- <mat-error style="color: red" >
+                                Please insert password!
+                            </mat-error> -->
+                        </mat-form-field>
+                        <a style="margin-left: 35%; margin-top: 20px;font-size: medium; color: #0c83e2"
+                           routerLink="/forgotten-password">Forgot password?</a>
+                        <button class="btn btn-primary" style="width: 100%; margin-top: 20px">Sign In</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+        <!-- <mat-spinner *ngIf="showSpinner" style=" position: fixed; left: 46%;width: 20px;height: 20px"></mat-spinner> -->
+    </div>
+</div>
+
+
+

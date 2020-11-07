@@ -1,0 +1,343 @@
+
+{
+  "header": {
+    "reportVersion": 1,
+    "event": "Allocation failed - JavaScript heap out of memory",
+    "trigger": "FatalError",
+    "filename": "report.20191209.054925.7836.0.001.json",
+    "dumpEventTime": "2019-12-09T05:49:25Z",
+    "dumpEventTimeStamp": "1575899365381",
+    "processId": 7836,
+    "cwd": "E:\\project\\FellowShipSMSSystemWeb-master",
+    "commandLine": [
+      "node",
+      "C:\\Users\\yididiya\\AppData\\Roaming\\npm\\\\node_modules\\@angular\\cli\\bin\\ng",
+      "serve"
+    ],
+    "nodejsVersion": "v12.13.0",
+    "wordSize": 64,
+    "arch": "x64",
+    "platform": "win32",
+    "componentVersions": {
+      "node": "12.13.0",
+      "v8": "7.7.299.13-node.12",
+      "uv": "1.32.0",
+      "zlib": "1.2.11",
+      "brotli": "1.0.7",
+      "ares": "1.15.0",
+      "modules": "72",
+      "nghttp2": "1.39.2",
+      "napi": "5",
+      "llhttp": "1.1.4",
+      "http_parser": "2.8.0",
+      "openssl": "1.1.1d",
+      "cldr": "35.1",
+      "icu": "64.2",
+      "tz": "2019a",
+      "unicode": "12.1"
+    },
+    "release": {
+      "name": "node",
+      "lts": "Erbium",
+      "headersUrl": "https://nodejs.org/download/release/v12.13.0/node-v12.13.0-headers.tar.gz",
+      "sourceUrl": "https://nodejs.org/download/release/v12.13.0/node-v12.13.0.tar.gz",
+      "libUrl": "https://nodejs.org/download/release/v12.13.0/win-x64/node.lib"
+    },
+    "osName": "Windows_NT",
+    "osRelease": "10.0.10240",
+    "osVersion": "Windows 10 Enterprise",
+    "osMachine": "x86_64",
+    "cpus": [
+      {
+        "model": "Intel(R) Core(TM) i5-5200U CPU @ 2.20GHz",
+        "speed": 2195,
+        "user": 3085640,
+        "nice": 0,
+        "sys": 5814500,
+        "idle": 8906750,
+        "irq": 172140
+      },
+      {
+        "model": "Intel(R) Core(TM) i5-5200U CPU @ 2.20GHz",
+        "speed": 2195,
+        "user": 3121890,
+        "nice": 0,
+        "sys": 5858656,
+        "idle": 8826125,
+        "irq": 31671
+      },
+      {
+        "model": "Intel(R) Core(TM) i5-5200U CPU @ 2.20GHz",
+        "speed": 2195,
+        "user": 3225390,
+        "nice": 0,
+        "sys": 6798890,
+        "idle": 7782375,
+        "irq": 19500
+      },
+      {
+        "model": "Intel(R) Core(TM) i5-5200U CPU @ 2.20GHz",
+        "speed": 2195,
+        "user": 3237828,
+        "nice": 0,
+        "sys": 7346578,
+        "idle": 7222250,
+        "irq": 14281
+      }
+    ],
+    "host": "DESKTOP-TS9IUU6"
+  },
+  "javascriptStack": {
+    "message": "No stack.",
+    "stack": [
+      "Unavailable."
+    ]
+  },
+  "nativeStack": [
+    {
+      "pc": "0x00007ff6def81389",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff6def857cc",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff6def84778",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff6df07332b",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff6df876f4e",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff6df85ef91",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff6df72c85c",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff6df708853",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff6df706b4b",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff6df7321cd",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff6df733ed4",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff6df729fc3",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff6df728794",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff6df749a65",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff6df4b60c7",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff6dfca2c6d",
+      "symbol": ""
+    },
+    {
+      "pc": "0x0000012fa3ce54ce",
+      "symbol": ""
+    }
+  ],
+  "javascriptHeap": {
+    "totalMemory": 438726656,
+    "totalCommittedMemory": 438726656,
+    "usedMemory": 258421504,
+    "availableMemory": 1735703112,
+    "memoryLimit": 2133852160,
+    "heapSpaces": {
+      "read_only_space": {
+        "memorySize": 262144,
+        "committedMemory": 262144,
+        "capacity": 261872,
+        "used": 32296,
+        "available": 229576
+      },
+      "new_space": {
+        "memorySize": 33554432,
+        "committedMemory": 33554432,
+        "capacity": 16759808,
+        "used": 820192,
+        "available": 15939616
+      },
+      "old_space": {
+        "memorySize": 343519232,
+        "committedMemory": 343519232,
+        "capacity": 201871488,
+        "used": 201562912,
+        "available": 308576
+      },
+      "code_space": {
+        "memorySize": 5144576,
+        "committedMemory": 5144576,
+        "capacity": 2751232,
+        "used": 2751232,
+        "available": 0
+      },
+      "map_space": {
+        "memorySize": 5246976,
+        "committedMemory": 5246976,
+        "capacity": 2540080,
+        "used": 2540080,
+        "available": 0
+      },
+      "large_object_space": {
+        "memorySize": 50184192,
+        "committedMemory": 50184192,
+        "capacity": 49988072,
+        "used": 49988072,
+        "available": 0
+      },
+      "code_large_object_space": {
+        "memorySize": 815104,
+        "committedMemory": 815104,
+        "capacity": 726720,
+        "used": 726720,
+        "available": 0
+      },
+      "new_large_object_space": {
+        "memorySize": 0,
+        "committedMemory": 0,
+        "capacity": 16759808,
+        "used": 0,
+        "available": 16759808
+      }
+    }
+  },
+  "resourceUsage": {
+    "userCpuSeconds": 47.687,
+    "kernelCpuSeconds": 8.375,
+    "cpuConsumptionPercent": 147.532,
+    "maxRss": 480006144,
+    "pageFaults": {
+      "IORequired": 269172,
+      "IONotRequired": 0
+    },
+    "fsActivity": {
+      "reads": 5309,
+      "writes": 11
+    }
+  },
+  "libuv": [
+  ],
+  "environmentVariables": {
+    "": "::=::\\",
+    "": "C:=C:\\",
+    "": "E:=E:\\project\\FellowShipSMSSystemWeb-master",
+    "ALLUSERSPROFILE": "C:\\ProgramData",
+    "APPDATA": "C:\\Users\\yididiya\\AppData\\Roaming",
+    "CommonProgramFiles": "C:\\Program Files\\Common Files",
+    "CommonProgramFiles(x86)": "C:\\Program Files (x86)\\Common Files",
+    "CommonProgramW6432": "C:\\Program Files\\Common Files",
+    "COMPUTERNAME": "DESKTOP-TS9IUU6",
+    "ComSpec": "C:\\Windows\\system32\\cmd.exe",
+    "dp0": "C:\\Users\\yididiya\\AppData\\Roaming\\npm\\",
+    "FPS_BROWSER_APP_PROFILE_STRING": "Internet Explorer",
+    "FPS_BROWSER_USER_PROFILE_STRING": "Default",
+    "GTK_BASEPATH": "C:\\Program Files (x86)\\GtkSharp\\2.12\\",
+    "HOMEDRIVE": "C:",
+    "HOMEPATH": "\\Users\\yididiya",
+    "JAVA_HOME": "C:\\Program Files\\Java\\jdk1.8.0_151",
+    "LOCALAPPDATA": "C:\\Users\\yididiya\\AppData\\Local",
+    "LOGONSERVER": "\\\\DESKTOP-TS9IUU6",
+    "NUMBER_OF_PROCESSORS": "4",
+    "OneDrive": "C:\\Users\\yididiya\\OneDrive",
+    "OS": "Windows_NT",
+    "Path": "C:\\Program Files\\Java\\jdk-10.0.1\\bin;C:\\Program Files (x86)\\GtkSharp\\2.12\\bin;C:\\Program Files (x86)\\Microsoft SQL Server\\Client SDK\\ODBC\\130\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\140\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\140\\DTS\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\140\\Tools\\Binn\\ManagementStudio\\;C:\\Program Files (x86)\\GnuWin32\\bin;C:\\Program Files (x86)\\CodeBlocks\\MinGW\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files\\Gits\\cmd;E:\\Programs\\xampp-in\\php;C:\\composer;C:\\Program Files\\Java\\jdk1.8.0_151\\bin;C:\\Users\\yididiya\\AppData\\Local\\GitHubDesktop\\bin;C:\\Users\\yididiya\\AppData\\Roaming\\npm;D:\\Programs\\Microsoft VS Code\\bin;E:\\Programs\\Microsoft VS Code\\bin;C:\\Users\\yididiya\\AppData\\Roaming\\Composer\\vendor\\bin",
+    "PATHEXT": ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JSE;.WSF;.WSH;.MSC",
+    "PROCESSOR_ARCHITECTURE": "AMD64",
+    "PROCESSOR_IDENTIFIER": "Intel64 Family 6 Model 61 Stepping 4, GenuineIntel",
+    "PROCESSOR_LEVEL": "6",
+    "PROCESSOR_REVISION": "3d04",
+    "ProgramData": "C:\\ProgramData",
+    "ProgramFiles": "C:\\Program Files",
+    "ProgramFiles(x86)": "C:\\Program Files (x86)",
+    "ProgramW6432": "C:\\Program Files",
+    "PROMPT": "$P$G",
+    "PSModulePath": "C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules\\",
+    "PUBLIC": "C:\\Users\\Public",
+    "SESSIONNAME": "Console",
+    "SystemDrive": "C:",
+    "SystemRoot": "C:\\Windows",
+    "TEMP": "C:\\Users\\yididiya\\AppData\\Local\\Temp",
+    "TMP": "C:\\Users\\yididiya\\AppData\\Local\\Temp",
+    "USERDOMAIN": "DESKTOP-TS9IUU6",
+    "USERDOMAIN_ROAMINGPROFILE": "DESKTOP-TS9IUU6",
+    "USERNAME": "yididiya",
+    "USERPROFILE": "C:\\Users\\yididiya",
+    "WEBPACK_DEV_SERVER": "true",
+    "windir": "C:\\Windows",
+    "_prog": "node"
+  },
+  "sharedObjects": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "C:\\Windows\\SYSTEM32\\ntdll.dll",
+    "C:\\Windows\\system32\\KERNEL32.DLL",
+    "C:\\Windows\\system32\\KERNELBASE.dll",
+    "C:\\Windows\\system32\\WS2_32.dll",
+    "C:\\Windows\\system32\\sechost.dll",
+    "C:\\Windows\\system32\\RPCRT4.dll",
+    "C:\\Windows\\system32\\NSI.dll",
+    "C:\\Windows\\system32\\ADVAPI32.dll",
+    "C:\\Windows\\system32\\msvcrt.dll",
+    "C:\\Windows\\system32\\USER32.dll",
+    "C:\\Windows\\system32\\GDI32.dll",
+    "C:\\Windows\\system32\\PSAPI.DLL",
+    "C:\\Windows\\system32\\CRYPT32.dll",
+    "C:\\Windows\\system32\\MSASN1.dll",
+    "C:\\Windows\\SYSTEM32\\IPHLPAPI.DLL",
+    "C:\\Windows\\SYSTEM32\\USERENV.dll",
+    "C:\\Windows\\system32\\profapi.dll",
+    "C:\\Windows\\SYSTEM32\\bcrypt.dll",
+    "C:\\Windows\\SYSTEM32\\WINMM.dll",
+    "C:\\Windows\\SYSTEM32\\WINNSI.DLL",
+    "C:\\Windows\\SYSTEM32\\dbghelp.dll",
+    "C:\\Windows\\SYSTEM32\\WINMMBASE.dll",
+    "C:\\Windows\\system32\\cfgmgr32.dll",
+    "C:\\Windows\\SYSTEM32\\DEVOBJ.dll",
+    "C:\\Windows\\system32\\IMM32.DLL",
+    "C:\\Windows\\system32\\MSCTF.dll",
+    "C:\\Windows\\system32\\powrprof.dll",
+    "C:\\Windows\\system32\\uxtheme.dll",
+    "C:\\Windows\\system32\\combase.dll",
+    "C:\\Windows\\system32\\mswsock.dll",
+    "C:\\Windows\\system32\\kernel.appcore.dll",
+    "C:\\Windows\\system32\\bcryptprimitives.dll",
+    "C:\\Windows\\SYSTEM32\\dhcpcsvc6.DLL",
+    "C:\\Windows\\SYSTEM32\\dhcpcsvc.DLL",
+    "C:\\Windows\\SYSTEM32\\CRYPTBASE.DLL",
+    "C:\\Windows\\system32\\napinsp.dll",
+    "C:\\Windows\\system32\\pnrpnsp.dll",
+    "C:\\Windows\\system32\\NLAapi.dll",
+    "C:\\Windows\\SYSTEM32\\DNSAPI.dll",
+    "C:\\Windows\\System32\\winrnr.dll",
+    "C:\\Windows\\system32\\wshbth.dll",
+    "C:\\Windows\\System32\\rasadhlp.dll",
+    "C:\\Windows\\System32\\fwpuclnt.dll",
+    "\\\\?\\E:\\project\\FellowShipSMSSystemWeb-master\\node_modules\\node-sass\\vendor\\win32-x64-72\\binding.node"
+  ]
+}
