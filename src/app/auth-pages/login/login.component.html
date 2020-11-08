@@ -4,7 +4,7 @@
         <div class="col-md-3">
             <div class="card card-profile">
                 <div class="card-avatar">
-                    <img class="img" src="../assets/img/angular2-logo-red.png"/>
+                    <img class="img-fluid" src="../assets/img/telegram_logo.png"/>
                 </div>
                 <div class="card-body">
                     <h6 class="card-category text-gray"><b>Daily Devotion (4Telegram Bot)</b></h6>
@@ -12,16 +12,16 @@
 
                     <form>
                         <mat-form-field>
-                            <input matInput placeholder="Email" type="email" formControlName="email" required>
-                            <!-- <mat-error style="color: red" >
+                            <input class="form-control" placeholder="Email" type="email" formControlName="email" required>
+                            <mat-error style="color: red" >
                                 Please insert email!
-                            </mat-error> -->
+                            </mat-error>
                         </mat-form-field>
                         <mat-form-field class="full-width-input">
-                            <input matInput type="password" placeholder="Password" formControlName="password" required>
-                            <!-- <mat-error style="color: red" >
+                            <input class="form-control" type="password" placeholder="Password" formControlName="password" required>
+                            <mat-error style="color: red" >
                                 Please insert password!
-                            </mat-error> -->
+                            </mat-error>
                         </mat-form-field>
                         <a style="margin-left: 35%; margin-top: 20px;font-size: medium; color: #0c83e2"
                            routerLink="/forgotten-password">Forgot password?</a>

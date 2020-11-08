@@ -15,8 +15,12 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatSelectModule} from "@angular/material/select";
 import { MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
-import {MatCardModule, MatCheckboxModule, MatInputModule, MatSlideToggleModule} from "@angular/material";
-
+import {
+    MatCardModule, MatCheckboxModule, MatInputModule,
+    MatSlideToggleModule
+} from "@angular/material";
+import {HttpClientModule} from "@angular/common/http";
+import { AngularEditorModule } from '@kolkov/angular-editor';
 
 @NgModule({
     imports: [
@@ -24,13 +28,15 @@ import {MatCardModule, MatCheckboxModule, MatInputModule, MatSlideToggleModule} 
         ComponentsModule,
         FormsModule,
         ReactiveFormsModule,
-      //  ConfirmationPopoverModule,
+        MatFormFieldModule,
+        HttpClientModule,
+        AngularEditorModule,
+        // ConfirmationPopoverModule,
         // NgxPaginationModule,
         MatListModule,
         MatIconModule,
         MatCheckboxModule,
         MatSlideToggleModule,
-        MatFormFieldModule,
         MatButtonModule,
         MatInputModule,
        // ConfirmationPopoverModule,
