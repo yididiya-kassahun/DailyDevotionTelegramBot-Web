@@ -17,6 +17,7 @@ import {
     MatCardModule, MatFormFieldControl, MatFormFieldModule, MatIconModule, MatInputModule,
     MatSelectModule
 } from "@angular/material";
+import {SendDevotionService} from "./service/send-message/send-devotion.service";
 
 
 @NgModule({
@@ -41,7 +42,7 @@ import {
         AdminPagesLayoutComponent,
         AuthPagesLayoutComponent
     ],
-    providers: [DevotionService,AuthenticationService],
+    providers: [DevotionService,AuthenticationService,SendDevotionService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

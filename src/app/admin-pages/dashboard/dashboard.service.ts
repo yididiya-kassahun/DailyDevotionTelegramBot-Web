@@ -9,8 +9,8 @@ export class DevotionsService {
         private  httpClient: HttpClient
     ) { }
 
-    collectionofContacts() {
-        return this.httpClient.get('http://localhost:8000/api/')
-    }
+    // collectionofContacts() {
+    //     return this.httpClient.get('http://localhost:8000/api/')
+    // }
 
 }

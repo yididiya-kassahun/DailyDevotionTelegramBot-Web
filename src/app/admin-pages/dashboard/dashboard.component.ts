@@ -5,6 +5,12 @@ import {HttpErrorResponse, HttpHeaders} from "@angular/common/http";
 import {StorageService} from "../../service/storage.service";
 import {DevotionService} from "../../service/devotion/devotion.service";
 import { AngularEditorConfig } from '@kolkov/angular-editor';
+import {SendDevotionService} from "../../service/send-message/send-devotion.service";
+
+interface TelegramModalInterface {
+    title: string;
+    content: string;
+}
 
 @Component({
   selector: 'app-dashboard',
@@ -18,14 +24,16 @@ export class DashboardComponent implements OnInit {
     loading: boolean;
     current_page: string;
     _form: string;
+    _telegramForm:any;
     per_page: number;
     total: number;
     page: number;
 
     dataSource: any;
 
-  constructor(private _formBuilder: FormBuilder,
+  constructor(  private _formBuilder: FormBuilder,
                 private devotionService: DevotionService,
+                private sendDevotion : SendDevotionService,
                 private storageService: StorageService) {
       this.page = 1;
     }
@@ -44,16 +52,21 @@ export class DashboardComponent implements OnInit {
         if (e) {
             this.page = e;
         }
+        this._telegramForm = this._formBuilder.group({
+            title: ['', [Validators.required]],
+            content: ['', [Validators.required]],
+        });
+
         const headers = new HttpHeaders()
-            .append('Access-Control-Allow-Origin', '*')
-            .append('Access-Control-Allow-Methods', 'GET')
-            .append('X-Requested-With', 'XMLHttpRequest')
-            .append('Access-Control-Allow-Headers', 'Content-Type')
-            .append('Authorization', `Bearer ${this.storageService.getStorage('accessToken')}`);
+            // .append('Access-Control-Allow-Origin', '*')
+            // .append('Access-Control-Allow-Methods', 'GET')
+            // .append('X-Requested-With', 'XMLHttpRequest')
+            // .append('Access-Control-Allow-Headers', 'Content-Type')
+            // .append('Authorization', `Bearer ${this.storageService.getStorage('accessToken')}`);
         return this.devotionService.gets(headers, '/getMembers?page=' + this.page)
             .subscribe((res: any) => {
                 this.loading = false;
-                this.dataSource = res.members;
+                this.dataSource = res.members.data;
                  // this.total = res.members.total;
                  // this.per_page = res.members.per_page;
             }, (httpErrorResponse: HttpErrorResponse) => {
@@ -61,15 +74,15 @@ export class DashboardComponent implements OnInit {
             })
     }
 
-    postDevotion() {
+    postDevotion(telegramModalInterface :TelegramModalInterface) {
      //   contactsModalInterface['graduate_year'] = moment(this.date.value.toString()).year().toString();
         const headers = new HttpHeaders()
-            .append('Access-Control-Allow-Origin', '*')
-            .append('Access-Control-Allow-Methods', 'POST')
-            .append('X-Requested-With', 'XMLHttpRequest')
-            .append('Access-Control-Allow-Headers', 'Content-Type')
+            // .append('Access-Control-Allow-Origin', '*')
+            // .append('Access-Control-Allow-Methods', 'POST')
+            // .append('X-Requested-With', 'XMLHttpRequest')
+            // .append('Access-Control-Allow-Headers', 'Content-Type')
            // .append('Authorization', `Bearer ${this.storageService.getStorage('accessToken')}`);
-        return this.devotionService.create(null, headers, '/contact')
+        return this.sendDevotion.create(telegramModalInterface, headers, '/postMessage')
             .subscribe((res: { message: string }) => {
                 //this.dialogRef.close();
                // this.showNotification01('top','right');

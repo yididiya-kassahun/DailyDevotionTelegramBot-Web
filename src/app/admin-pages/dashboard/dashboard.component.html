@@ -1,89 +1,135 @@
 <hr>
 <div>
-    <img class="img-fluid" style="margin-left: 350px;" width="500px" height="240px" src="../assets/img/banner_tgbot.png">
+    <img class="img-fluid" style="margin-left: 350px;" width="500px" height="240px"
+         src="../assets/img/banner_tgbot.png">
 </div>
-<div class="row">
-<div class="card" style="float: left; margin: 40px;width: auto;">
-    <div class="card-header" style="white-space: nowrap; text-overflow: ellipsis;">
-        <p  style="font-size: 26px">Telegram Registered Contacts</p>
-    </div>
 
-    <div class="card-body">
-        <div class="table-responsive">
-           <div id="contents" #contents>
-            <table class="table table-striped w-auto" width="100%">
-                <thead>
-                <tr>
-                    <th >#</th>
-                    <th scope="col">Telegram Id</th>
-                    <th scope="col">Full Name</th>
-                    <th scope="col">Created at</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr *ngFor="let member of dataSource let i = index" scope="row">
-                    <td>{{i + 1}}</td>
-                    <td>{{member.chat_id}}</td>
-                    <td>{{member.first_name}}</td>
-                    <td>{{member.created_at}}</td>
-                    <td>
-                        <button>
-                            <!--(confirm)="deleteContact(contact.contact_id)-->
+<!--Card Headers-->
 
-                            <mat-icon style="color: red;" mat-raised-button>delete_outline</mat-icon>
-                        </button>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-           </div>
-            </div>
-            <div>
-                <!-- <pagination-controls id="listing_pagination" maxSize="5" directionLinks="true"
-                                     (pageChange)="collectionOfcon($event)"></pagination-controls> -->
+<div class="container-fluid">
+    <div class="row" style="margin-left: 20%">
+        <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="card card-stats">
+                <div class="card-header card-header-warning card-header-icon">
+                    <p class="card-category"><b>Total Registered Members</b></p>
+                    <h3 class="card-title">34
+                        <small></small>
+                    </h3>
+                </div>
+                <div class="card-footer">
+                    <div class="stats">
+                        <a>Get More Space...</a>
+                    </div>
+                </div>
             </div>
         </div>
-</div>
-<div class="card" style="float: left; margin: 40px;width: 40%;">
-      <div class="card-header" style="white-space: nowrap; text-overflow: ellipsis;">
-        <p  style="font-size: 26px">Bot Members Chart</p>
+        <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="card card-stats">
+                <div class="card-header card-header-success card-header-icon">
+                    <p class="card-category"><b>Total send Post</b></p>
+                    <h3 class="card-title">43
+                        <small></small>
+                    </h3>
+                </div>
+                <div class="card-footer">
+                    <div class="stats">
+                        <i class="material-icons">date_range</i> Last 24 Hours
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-     <div class="card-body">
-    <h3>Bar ChartJs with month</h3>
-     </div>
-</div>
 
-</div>
-<!-- Content -->
+    <!-- Content -->
 
-<div class="col-md-10" style="margin-left: 20px">
-  <div class="card">
-    <div class="card-header card-header-danger">
-      <h4 class="card-title">Add Devotion</h4>
-      <p class="card-category">Daily Devotion & Bible Verse Telegram Bot</p>
+    <div class="col-md-10" style="margin-left: 40px">
+        <div class="card">
+            <div class="card-header card-header-danger">
+                <h4 class="card-title">Add Devotion</h4>
+                <p class="card-category">Daily Devotion & Bible Verse Telegram Bot</p>
+            </div>
+            <div class="card-body">
+                <form [formGroup]="_telegramForm" (ngSubmit)="postDevotion(_telegramForm.value)">
+                    <!-- <div class="row"> -->
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input name="title"
+                                   class="form-control"
+                                   formControlName="title"
+                                   placeholder="Devotion Title">
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Devotion Content</label>
+                            <angular-editor lang="amh" formControlName="content" [config]="editorConfig">Devotion Content
+                            </angular-editor>
+                        </div>
+                    </div>
+                    <!-- </div> -->
+                    <button mat-raised-button type="submit" class="btn btn-primary pull-center"
+                            style="margin-left: 400px">Post
+                    </button>
+                    <div class="clearfix"></div>
+                </form>
+            </div>
+        </div>
     </div>
-    <div class="card-body">
-      <form [formGroup]="">
-        <!-- <div class="row"> -->
 
-          <div class="col-md-6">
-              <div class="form-group">
-              <input name="title" class="form-control"  placeholder="Devotion Title">
-          </div>
-          </div>
-          <div class="col-md-12">
-              <div class="form-group">
-              <label>Devotion Content</label>
-                <angular-editor formControlName="htmlContent" [config]="editorConfig">Devotion Content</angular-editor>
-              <!--<textarea matInput class="form-control" cols="75" rows="10" placeholder="Devotion Content"></textarea>-->
-              </div>
-          </div>
-        <!-- </div> -->
-        <button mat-raised-button type="submit" class="btn btn-primary pull-center" style="margin-left: 400px">Post</button>
-        <div class="clearfix"></div>
-      </form>
+
+    <div class="row">
+        <div class="card" style="float: left; margin: 40px;width: auto;">
+            <div class="card-header" style="white-space: nowrap; text-overflow: ellipsis;">
+                <p style="font-size: 26px">Telegram Registered Contacts</p>
+            </div>
+
+            <div class="card-body">
+                <div class="table-responsive">
+                    <div id="contents" #contents>
+                        <table class="table table-striped w-auto" width="100%">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th scope="col">Telegram Id</th>
+                                <th scope="col">Full Name</th>
+                                <th scope="col">Created at</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr *ngFor="let member of dataSource let i = index" scope="row">
+                                <td>{{i + 1}}</td>
+                                <td>{{member.chat_id}}</td>
+                                <td>{{member.first_name}}</td>
+                                <td>{{member.created_at}}</td>
+                                <td>
+                                    <button>
+                                        <!--(confirm)="deleteContact(contact.contact_id)-->
+
+                                        <mat-icon style="color: red;" mat-raised-button>delete_outline</mat-icon>
+                                    </button>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div>
+                    <!-- <pagination-controls id="listing_pagination" maxSize="5" directionLinks="true"
+                                         (pageChange)="collectionOfcon($event)"></pagination-controls> -->
+                </div>
+            </div>
+        </div>
+        <div class="card" style="float: left; margin: 40px;width: 40%;">
+            <div class="card-header" style="white-space: nowrap; text-overflow: ellipsis;">
+                <p style="font-size: 26px">Bot Members Chart</p>
+            </div>
+            <div class="card-body">
+                <h3>Bar ChartJs with month</h3>
+            </div>
+        </div>
+
     </div>
-  </div>
 </div>
 
 
