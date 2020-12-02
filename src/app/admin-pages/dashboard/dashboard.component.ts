@@ -6,6 +6,9 @@ import {StorageService} from "../../service/storage.service";
 import {DevotionService} from "../../service/devotion/devotion.service";
 import { AngularEditorConfig } from '@kolkov/angular-editor';
 import {SendDevotionService} from "../../service/send-message/send-devotion.service";
+import {TotalMembersService} from "../../service/count-members/total-members.service";
+import {CountDevotionsService} from "../../service/count-devotion/count-devotions.service";
+import {PostedDevotionsService} from "../../service/posted-devotions/posted-devotions.service";
 
 interface TelegramModalInterface {
     title: string;
@@ -28,17 +31,26 @@ export class DashboardComponent implements OnInit {
     per_page: number;
     total: number;
     page: number;
+    countMembers:number;
+    countDevotion:number;
 
     dataSource: any;
+    dataSources:any;
 
   constructor(  private _formBuilder: FormBuilder,
                 private devotionService: DevotionService,
                 private sendDevotion : SendDevotionService,
+                private recentPostService:PostedDevotionsService,
+                private countMembersService :TotalMembersService,
+                private countDevotionService:CountDevotionsService,
                 private storageService: StorageService) {
       this.page = 1;
     }
 
     ngOnInit() {
+        this.countTotalMembers();
+        this.countTotalDevotions();
+        this.recentPosts();
         this.collectionOfcon(this.page);
     }
 
@@ -71,6 +83,18 @@ export class DashboardComponent implements OnInit {
                  // this.per_page = res.members.per_page;
             }, (httpErrorResponse: HttpErrorResponse) => {
                 this.loading = false;
+            });
+
+    }
+    recentPosts(){
+
+        const headers = new HttpHeaders()
+        return this.recentPostService.gets(headers, '/recentPosts')
+            .subscribe((res: any) => {
+                this.loading = false;
+                this.dataSources = res.recentDevotion.data;
+            }, (httpErrorResponse: HttpErrorResponse) => {
+                this.loading = false;
             })
     }
 
@@ -89,6 +113,37 @@ export class DashboardComponent implements OnInit {
             }, (httpErrorResponse: HttpErrorResponse) => {
                 //   this.toastr.error(httpErrorResponse.error.error, 'Error', {timeOut: 10000});
                 console.log(httpErrorResponse);
+            })
+    }
+
+
+    countTotalMembers() {
+        const headers = new HttpHeaders()
+            // .append('Access-Control-Allow-Origin', '*')
+            // .append('Access-Control-Allow-Methods', 'GET')
+            // .append('X-Requested-With', 'XMLHttpRequest')
+            // .append('Access-Control-Allow-Headers', 'Content-Type')
+            // .append('Authorization', `Bearer ${this.storageService.getStorage('accessToken')}`)
+            // .append('Authorization', 'Bearer ' + this.storageService.getStorage('accessToken'));
+        return this.countMembersService.gets(headers, '/countMembers')
+            .subscribe((res: any) => {
+                this.countMembers = res.totalMembers;
+            }, (httpErrorResponse: HttpErrorResponse) => {
+            })
+    }
+
+    countTotalDevotions() {
+        const headers = new HttpHeaders()
+        // .append('Access-Control-Allow-Origin', '*')
+        // .append('Access-Control-Allow-Methods', 'GET')
+        // .append('X-Requested-With', 'XMLHttpRequest')
+        // .append('Access-Control-Allow-Headers', 'Content-Type')
+        // .append('Authorization', `Bearer ${this.storageService.getStorage('accessToken')}`)
+        // .append('Authorization', 'Bearer ' + this.storageService.getStorage('accessToken'));
+        return this.countDevotionService.gets(headers, '/countDevotion')
+            .subscribe((res: any) => {
+                this.countDevotion = res.totalDevotions;
+            }, (httpErrorResponse: HttpErrorResponse) => {
             })
     }
 

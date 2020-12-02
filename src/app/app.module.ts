@@ -18,6 +18,9 @@ import {
     MatSelectModule
 } from "@angular/material";
 import {SendDevotionService} from "./service/send-message/send-devotion.service";
+import {SettingsService} from "./service/Settings/settings.service";
+import {PostedDevotionsService} from "./service/posted-devotions/posted-devotions.service";
+import {AddBotComponent} from "./admin-pages/settings/add-bot/add-bot.component";
 
 
 @NgModule({
@@ -40,9 +43,11 @@ import {SendDevotionService} from "./service/send-message/send-devotion.service"
     declarations: [
         AppComponent,
         AdminPagesLayoutComponent,
+        AddBotComponent,
         AuthPagesLayoutComponent
     ],
-    providers: [DevotionService,AuthenticationService,SendDevotionService],
+    entryComponents:[AddBotComponent],
+    providers: [DevotionService,AuthenticationService,SendDevotionService,SettingsService,PostedDevotionsService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -12,7 +12,7 @@
             <div class="card card-stats">
                 <div class="card-header card-header-warning card-header-icon">
                     <p class="card-category"><b>Total Registered Members</b></p>
-                    <h3 class="card-title">34
+                    <h3 class="card-title">{{ countMembers }}
                         <small></small>
                     </h3>
                 </div>
@@ -27,7 +27,7 @@
             <div class="card card-stats">
                 <div class="card-header card-header-success card-header-icon">
                     <p class="card-category"><b>Total send Post</b></p>
-                    <h3 class="card-title">43
+                    <h3 class="card-title">{{ countDevotion }}
                         <small></small>
                     </h3>
                 </div>
@@ -122,10 +122,14 @@
         </div>
         <div class="card" style="float: left; margin: 40px;width: 40%;">
             <div class="card-header" style="white-space: nowrap; text-overflow: ellipsis;">
-                <p style="font-size: 26px">Bot Members Chart</p>
+                <p style="font-size: 26px"><b>Recent Posts</b></p>
+                <hr>
             </div>
             <div class="card-body">
-                <h3>Bar ChartJs with month</h3>
+                <div *ngFor="let recentDevotion of dataSources" scope="row">
+                <h5>{{ recentDevotion.devotion_title }}</h5>
+                <h5>{{ recentDevotion.devotion_content }}</h5>
+                </div>
             </div>
         </div>
 

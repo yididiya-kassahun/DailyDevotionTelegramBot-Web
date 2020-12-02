@@ -21,6 +21,9 @@ import {
 } from "@angular/material";
 import {HttpClientModule} from "@angular/common/http";
 import { AngularEditorModule } from '@kolkov/angular-editor';
+import { SettingsComponent } from './settings/settings.component';
+import { DevotionsComponent } from './devotions/devotions.component';
+import { AddBotComponent } from './settings/add-bot/add-bot.component';
 
 @NgModule({
     imports: [
@@ -47,8 +50,7 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
         MatDatepickerModule,
         MatSelectModule
     ],
-    declarations: [DashboardComponent,
-      
+    declarations: [DashboardComponent, SettingsComponent, DevotionsComponent,
     ],
     exports: [
         FormsModule,

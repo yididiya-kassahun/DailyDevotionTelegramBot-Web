@@ -1,0 +1,19 @@
+<div class="container-fluid">
+  <div class="card">
+    <div class="card-header card-header-danger">
+      <h4 class="card-title">Posted Devotions</h4>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+      <div *ngFor="let devotion of dataSource let i = index" scope="row">
+        <h4 style="font-style: normal">{{ devotion.devotion_title }}</h4>
+        <h5>{{ devotion.devotion_content }}</h5>
+        <small style="font-style: italic">Posted at {{devotion.created_at}}</small>
+        <hr>
+      </div>
+
+    </div>
+  </div>
+</div>
